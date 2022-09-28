@@ -5,13 +5,13 @@ from django.db import models
 class Server(models.Model):
 
     nombre=models.CharField(max_length=40)
-    modelo = models.IntegerField()
+    modelo=models.IntegerField()
 
 
-class Desarrollo(models.Model):
-    nombre= models.CharField(max_length=30)
-    aplicacion= models.CharField(max_length=30)
-    dueño= models.EmailField()
+#class Desarrollo(models.Model):
+#    nombre= models.CharField(max_length=30)
+#    aplicacion= models.CharField(max_length=30)
+#    dueño= models.EmailField()
 
 class Produccion(models.Model):
     nombre= models.CharField(max_length=30)
@@ -19,6 +19,6 @@ class Produccion(models.Model):
     dueño= models.EmailField()
 
 
-class SO(models.Model):
+class Sistemas(models.Model):
     nombre= models.CharField(max_length=30)
     aplicacion= models.CharField(max_length=30)

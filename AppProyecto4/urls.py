@@ -1,6 +1,5 @@
 from django.urls import path
-
-from AppProyecto4 import views
+from AppProyecto4.views import *
 
 
 
@@ -8,15 +7,18 @@ from AppProyecto4 import views
 
 urlpatterns = [
    
-    path('', views.inicio, name="Inicio"), #esta era nuestra primer view
-    path('Desarrollo', views.cursos, name="desarrollo"),
-    path('Producciom', views.profesores, name="produccion"),
-    path('Server', views.estudiantes, name="server"),
-    path('SO', views.entregables, name="so"),
+    path('', inicio, name="Inicio"),
+    #path('Desarrollo/', desarrollo, name="Desarrollo"),
+    path('produccion/', produccion, name="Produccionw"),
+    path('Produccion/', Productions, name="Produccion"),
+    path('Server/', Server, name="Server"),
+    path('Sistemas/', sistemas, name="Sistemas"),
+    path('Servers/', Servers, name="server"),
+    path('buscarModelo/', busquedaModelo, name="busquedaModelo"),
+    path('resultados/', resultados, name="ResultadosBusqueda"),
     #path('cursoFormulario', views.cursoFormulario, name="CursoFormulario"),
     #path('profesorFormulario', views.profesorFormulario, name="ProfesorFormulario"),
     #path('busquedaCamada',  views.busquedaCamada, name="BusquedaCamada"),
-    path('buscar/', views.buscar),
-   
+    
 ]
 

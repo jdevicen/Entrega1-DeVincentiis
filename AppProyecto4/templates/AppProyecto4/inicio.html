@@ -1,0 +1,37 @@
+{% extends "AppProyecto4/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+"Bienvenidos"
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+<form action="/AppProyecto4/resultados" method="GET"> {% csrf_token %}
+
+    <input type="number" name="modelo" id="modelo">
+    <input type="submit" value="Buscar">
+
+
+</form>
+
+<p> Estamos buscando el modelo: {{modelo}}</p>
+
+{% for servers in server %}
+
+    <p>Nombre: {{servers.nombre}} ----- Modelo: {{servers.modelo}}</p>
+
+{% endfor %}
+
+
+{% endblock %}
+
+
+
+
+
+
