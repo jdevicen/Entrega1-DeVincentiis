@@ -1,0 +1,59 @@
+{% extends "AppProyecto4/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+
+{% endblock %}
+
+
+{% block descripcion2 %}
+
+
+
+{% endblock %}
+
+{% block productions2 %}
+
+<body>
+
+    <form action="/AppProyecto4/leerProd.html" method="GET">
+    
+    
+        <h5>Inventario Produccion</h5>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Modelo</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+    {% for server in object_list %}
+                <tr class="success">
+                    <td>{{server.nombre}}</td>  
+                    <td>{{server.modelo}}</td>
+                    <td>
+                    {% if server.imagen %}
+                    <img src="{{ server.imagen.url }}" width="200" height="200">
+                    {% endif %}
+                    </td>
+                    <td><button><a href="{% url 'EliminarServer' server.id%}"> Eliminar </a></button></td>
+                    <td><button><a href="{% url 'editarServer' server.id %}"> Editar </a></button></td>
+                    <td><button><a href="{% url 'ServerDetalle' server.id %}"> Ver </a></button></td>
+                  </tr>
+            </tbody>    
+    {% endfor %}
+
+    <br>
+
+    <a href="{% url 'ServerCrear'%}"> Crear servers </a>
+    
+        </table>
+    </form>
+
+    {% endblock %}
+    
+   

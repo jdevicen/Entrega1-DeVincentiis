@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="/AppProyecto4/leerProd.html" method="GET">
+    
+    
+        <h5>Inventario Produccion</h5>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Aplicacion</th>
+                    <th>Dueño</th>
+                </tr>
+            </thead>
+            <tbody>
+    {% for prod in productions %}
+                <tr class="info">
+                    <td>{{prod.nombre}}</td>  
+                    <td>{{prod.aplicacion}}</td>
+                    <td>{{prod.dueño}}</td>
+                    <td><button><a href="{% url 'EliminarProd' prod.nombre %}"> Eliminar </a></button></td>
+                    <td><button><a href="{% url 'editarProduccion' prod.nombre %}"> Editar </a></button></td>
+                </tr>
+            </tbody>    
+    {% endfor %}
+
+    <br>
+
+    <a href="{% url 'Produccion'%}"> Crear en Produccion </a>
+        </table>
+    </form>
+    

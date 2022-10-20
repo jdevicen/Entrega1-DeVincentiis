@@ -2,9 +2,10 @@
 
 {% load static %}
 
+
 {% block titulo %}
 
-"Bienvenidos"
+{{mensaje}}
 
 {% endblock %}
 
@@ -27,6 +28,42 @@
 
 {% endfor %}
 
+{% endblock %}
+
+
+
+{% block productions2 %}
+
+<body>
+
+    <form action="/AppProyecto4/server_list.html" method="GET"
+    
+    
+        <h5>Inventario Produccion6</h5>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Modelo</th>
+                </tr>
+            </thead>
+            <tbody>
+{% for server in object_list %}
+                <tr>
+                    <td>{{server.nombre}}</td>  
+                    <td>{{server.modelo}}</td>
+                    <td><button><a href="{% url 'EliminarServer' server.id %}"> Eliminar </a></button></td>
+                    <td><button><a href="{% url 'editarServer' server.id %}"> Editar </a></button></td>
+                    <td><button><a href="{% url 'ServerDetalle' server.id %}"> Ver </a></button></td>
+                </tr>
+            </tbody>    
+{% endfor %}
+
+    <br>
+
+    <a href="{% url 'ServerLeer'%}"> View servers </a>
+        </table>
+    </form>
 
 {% endblock %}
 

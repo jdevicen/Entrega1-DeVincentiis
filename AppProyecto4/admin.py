@@ -8,3 +8,5 @@ from AppProyecto4.models import *
 admin.site.register(Produccion)
 admin.site.register(Sistemas)
 admin.site.register(Server)
+admin.site.register(Avatar)
+admin.site.register(ImagenServer)
